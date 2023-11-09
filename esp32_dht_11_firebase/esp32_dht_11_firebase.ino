@@ -4,9 +4,8 @@
 
 #include <NTPClient.h>
 #include <WiFiUdp.h>
-#include <Firebase_ESP_Client.h>
 
-// Provide the token generation process info.
+#include <Firebase_ESP_Client.h>
 #include <addons/TokenHelper.h>
 
 
@@ -98,7 +97,7 @@ void setup() {
 void loop() {
 
 
-  if (Firebase.ready() && (millis() - dataMillis > 60000 || dataMillis == 0)) {
+  if (Firebase.ready() && (millis() - dataMillis > 5000 || dataMillis == 0)) {
     dataMillis = millis();
 
     while (!timeClient.update()) {
@@ -129,7 +128,6 @@ void loop() {
     content.set("fields/DHT11_temperature/doubleValue", t);
 
     content.set("fields/DHT11_humidity/doubleValue", h);
-
     
     Serial.print("Create a document... ");
 

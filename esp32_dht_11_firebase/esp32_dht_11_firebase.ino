@@ -9,24 +9,26 @@
 // Provide the token generation process info.
 #include <addons/TokenHelper.h>
 
+
 #define DHTPIN 4  // Digital pin connected to the DHT sensor
 
 // Uncomment whatever type you're using!
 #define DHTTYPE DHT11  // DHT 11
 
 /* 1. Define the WiFi credentials */
-#define WIFI_SSID "MiFibra-ACF3"  //"TMDC Public"
-#define WIFI_PASSWORD "SfJfEG7f"  //"Mart1llo"
+#define WIFI_SSID ""  
+#define WIFI_PASSWORD "" 
 
 /* 2. Define the API Key */
-#define API_KEY "AIzaSyCNmXTPQTjbyTzd5Cs8Ra8RV3T8s94UeJs"
+#define API_KEY ""
 
 /* 3. Define the project ID */
-#define FIREBASE_PROJECT_ID "iot-dht11-d9932"
+#define FIREBASE_PROJECT_ID ""
 
 /* 4. Define the user Email and password that alreadey registerd or added in your project */
 #define USER_EMAIL ""
 #define USER_PASSWORD ""
+
 
 // Initialize DHT sensor.
 DHT dht(DHTPIN, DHTTYPE);
@@ -43,7 +45,7 @@ unsigned long dataMillis = 0;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 
-// Variables to save date and time
+// Variables to save timestamp
 String formattedDate;
 
 
